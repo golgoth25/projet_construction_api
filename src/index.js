@@ -6,6 +6,7 @@ const { Model } = require("objection")
 const config = require("./config")
 const articleRoutes = require("./routes/articleRoutes")
 const materiauRoutes = require("./routes/materiauRoutes")
+const saisieRoutes = require("./routes/saisieRoutes")
 
 const db = knex(config.db)
 const app = express()
@@ -23,6 +24,7 @@ app.use(express.json())
 
 articleRoutes({ app, db })
 materiauRoutes({ app, db })
+saisieRoutes({app})
 
 app.listen(config.app.port, () =>
   console.log(`Listening on :${config.app.port}`),
