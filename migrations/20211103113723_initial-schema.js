@@ -2,7 +2,7 @@ exports.up = async (knex) => {
     await knex.schema.createTable("materiau", (table) => {
         table.increments("id").primary()
         table.string("type_materiau", 120).notNullable().unique()        
-      })
+      })      
     await knex.schema.createTable("article", (table) => {
       table.increments("id").primary()
       table.string("nom_article", 120).notNullable().unique()
